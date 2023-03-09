@@ -8,14 +8,12 @@ const funSort = () => {
     inputValue.sort((a, b) => {
         if(sortRadio === true) {
             if(a < b) {
-            return a - b;
+                return a - b;
             }
-            } else {
-                if(a > b) {
+            if(a > b) {
                 return b - a;
             }
-      
-        } 
+        }
     });
     console.log(inputValue);
 };
