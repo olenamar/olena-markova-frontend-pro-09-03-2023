@@ -1,24 +1,22 @@
-const form = document.querySelector('.form');
+const inputNumber = document.querySelector('.number')
+const radioUp = document.querySelector('.up');
+const radioDown = document.querySelector('.down')
 
-const funSort = () => {
-    const numberImput = form.number.value;
-    const inputValue = numberImput.split(",").map((number) => Number(number));
-    const radioUp = document.querySelector('.up');
-    const sortRadio = radioUp.checked;
-    inputValue.sort((a, b) => {
-        if(sortRadio === true) {
-            if(a < b) {
-                return a - b;
-            }
-            if(a > b) {
-                return b - a;
-            }
-        }
-    });
-    console.log(inputValue);
-};
-
-form.addEventListener("submit", (event) => {
+const form  = document.querySelector('.form').addEventListener('submit', (event) => {
     event.preventDefault();
-    funSort();
-})
+    const inputValue = inputNumber.value.split(', ');
+    arrNumber = inputValue.map((number => Number(number)));
+    const radioUpSort = radioUp.checked;
+    const radiDownSort = radioDown.checked;
+    if(radioUpSort){
+        arrNumber.sort((a, b) => {
+            return a - b;
+        }); 
+    }
+    if(radiDownSort){
+        arrNumber.sort((a, b) => {
+            return b - a;
+        }); 
+    }
+console.log(arrNumber)  
+});  
