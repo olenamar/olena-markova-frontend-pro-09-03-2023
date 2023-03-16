@@ -6,7 +6,7 @@ const radioUp = document.querySelector('.up');
 const form  = document.querySelector('.form').addEventListener('submit', (event) => {
     event.preventDefault();
     const inputValue = inputNumber.value.split(', ');
-    let arrNumber = inputValue.map((number => Number(number)));
+    const arrNumber = inputValue.map((number => Number(number)));
     const radioSort = radioUp.checked;
     if(radioSort){
         arrNumber.sort((a, b) => {
